@@ -1,0 +1,33 @@
+{
+    "name": "onemoreblock/laravel-validatorjs",
+    "description": "Laravel support for front-end validation with validatorjs",
+    "keywords": [
+        "laravel",
+        "validator",
+        "validatorjs"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ram Bhosale",
+            "email": "rambhosale9@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.1|^8",
+    },
+    "autoload" : {
+        "psr-4": {
+            "OneMoreBlock\\Validatorjs\\" : "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers":[
+                "OneMoreBlock\\Validatorjs\\ValidatorJsServiceProvider"
+            ]
+        }
+    }
+}
