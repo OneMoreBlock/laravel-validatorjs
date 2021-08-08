@@ -3,11 +3,12 @@
 namespace OneMoreBlock\Validatorjs;
 
 use OneMoreBlock\Validatorjs\Types\ValueType;
+use OneMoreBlock\Validatorjs\Convert\Messages;
 
 trait Generator
 {
 
-    use ValueType;
+    use ValueType, Messages;
 
     protected $prodValidatorJs = '<script src="https://cdnjs.cloudflare.com/ajax/libs/validatorjs/2.0.0/validator.min.js" integrity="sha512-Y/Pox7RqKmT84klgmJCva3drWoXQWO42oHiWWhb9zd1pkIH60NF2SamgBrFHOTzrzHJhwgPGNGjNJ5ZmxLpUAQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>';
 
@@ -41,11 +42,11 @@ trait Generator
     private function getScriptsData()
     {
         return [
-            'table_id' => $this->tableID,
-            'successCallback' => $this->successCallback,
-            'rules' => $this->rules(),
-            'attributes' => $this->attributes(),
-            'messages' => $this->messages(),
+            'table_id'          => $this->tableID,
+            'successCallback'   => $this->successCallback,
+            'rules'             => $this->rules(),
+            'attributes'        => $this->attributes(),
+            'messages'          => $this->getValidatorMessages(),
         ];
     }
 
