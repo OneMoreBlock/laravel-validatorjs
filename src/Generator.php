@@ -16,27 +16,24 @@ trait Generator
 
     public function generateScriptData()
     {
-        return $this->getValidatorLibrary() . "\n".
-        '<script> validatorjs = ' . json_encode($this->getScriptsData()) . '</script>';
-    }
+        $outPut = '';
 
-    private function parseScriptData()
-    {
-
-        $data = '{';
-
-        foreach($this->getScriptsData() as $key => $value) {
-
-            if($value == null) {
-                break;
-            }
-
-            $data .= "$key : $value, ";
+        foreach ($this->getRequiredScripts() as $value) {
+            $outPut .= $value . "\n";
         }
 
-        $data .= '}';
+        return $outPut;
+    }
 
-        return $data;
+    private function getRequiredScripts()
+    {
+
+        return [
+            $this->getValidatorLibrary(),
+            '<script> validatorjs = ' . json_encode($this->getScriptsData()) . '</script>',
+            $this->generateScriptTag(config('validatorjs.js_vendor')),
+        ];
+
     }
 
     private function getScriptsData()
@@ -53,5 +50,9 @@ trait Generator
     private function getValidatorLibrary()
     {
         return config('app.env') == 'local' ? $this->devValidatorJs : $this->prodValidatorJs;
+    }
+
+    private function generateScriptTag($filePath) {
+        return '<script src="' . $filePath . '"></script>';
     }
 }
