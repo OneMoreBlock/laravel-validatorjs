@@ -1,6 +1,6 @@
 {
     "name": "onemoreblock/laravel-validatorjs",
-    "description": "Laravel support for front-end validation with validatorjs",
+    "description": "Frontend form validation library with validatorjs API for Laravel",
     "keywords": [
         "laravel",
         "validator",
