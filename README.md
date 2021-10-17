@@ -1,4 +1,4 @@
-#Validatorjs API for Laravel 7+
+# Validatorjs API for Laravel 7+
 
 ### This package is created to handle the frontend form validation by just writing one set of rules for both Laravel and apply them for frontend also
 
