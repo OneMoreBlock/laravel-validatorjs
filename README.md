@@ -8,9 +8,9 @@
 ### \*\* This library is far from being perfect and currently dosen't suit all the use cases, but still it will work ifor most requirements \*\*
 
 ## TODO
-- [ ] Generate the validation rules which are **only supported** by both **Laravel** and **Validatorjs**
-- [ ] Add **support** for** Tailwind CSS** errors (Currently only supports auto error display for** Bootstrap 5**)
-- [ ] Support for adding** custom validation rules**
+- [ ] Generate the validation rules which are **supported** by both **Laravel** and **Validatorjs**
+- [ ] Add **support** for** Tailwind CSS** errors (Currently only supports auto error display for **Bootstrap 5**)
+- [ ] Add Support for adding **custom validation rules**
 
 
 ## Quick Installation
